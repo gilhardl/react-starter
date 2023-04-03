@@ -4,13 +4,13 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start & npm run watch:styles && kill $!",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:styles": "postcss src/styles/index.css -o src/styles/tailwind.css",
-    "prebuild": "npm run build:styles",
-    "prestart": "npm run build:styles"
+    "build:styles": "postcss src/index.css -o src/styles.css",
+    "watch:styles": "postcss src/index.css -o src/styles.css -w",
+    "prebuild": "npm run build:styles"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
